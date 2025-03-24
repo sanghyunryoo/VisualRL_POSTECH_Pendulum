@@ -17,9 +17,7 @@ cd VisualRL_POSTECH_Pendulum/
 pip install -r requirements.txt
 
 ## 🚀 Training
-```bash
 python main_rgb.py
 
 ## 🎯 Evaluation
-```bash
 python main_rgb.py --eval True
