@@ -6,8 +6,8 @@ A reinforcement learning project for visual-based control using RGB observations
 
 ---
 
-## 🛠️ Setup
 ```bash
+## 🛠️ Setup
 conda create -n vis_rl python=3.10
 conda activate vis_rl
 
