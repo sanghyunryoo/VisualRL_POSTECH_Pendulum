@@ -1,0 +1,76 @@
+<mujoco model="SinglePendulum">
+    <compiler angle="radian" balanceinertia="true" discardvisual="false" meshdir="./meshes/" texturedir="./textures"/>
+    <size njmax="500" nconmax="100" nuserdata="2" />
+
+    <option timestep="0.002">
+		<flag warmstart="enable" />
+	</option>
+
+    <!-- Default parameters -->
+    <default class="main">
+        <joint damping='0.003'/>
+        <geom contype="0" conaffinity="0"/>
+    </default>
+
+    <asset>
+        <mesh name="Frame" file="cocel_sip/Frame.STL" />
+        <mesh name="DAQBoard" file="cocel_sip/DAQBoard.STL" />
+        <mesh name="daq1" file="cocel_sip/daq1.STL" />
+        <mesh name="daqlink" file="cocel_sip/daqlink.STL" />
+        <mesh name="EPOS" file="cocel_sip/EPOS.STL" />
+        <mesh name="Rail" file="cocel_sip/Rail.STL" />
+        <mesh name="lm" file="cocel_sip/lm.STL" />
+        <mesh name="cart" file="cocel_sip/cart.STL" />
+        <mesh name="support1" file="cocel_sip/support1.STL" />
+        <mesh name="support2" file="cocel_sip/support2.STL" />
+        <mesh name="cartEncoder" file="cocel_sip/cartEncoder.STL" />
+        <mesh name="ArmBody" file="cocel_sip/ArmBody.STL" />
+        <mesh name="Mass" file="cocel_sip/Mass.STL" />
+        <mesh name="motor" file="cocel_sip/motor.STL" />
+        <!--include file="./include/world/assets_white.xml"/-->
+        <material name="black" shininess="0.03" specular="0.4" reflectance="100" rgba="0.01 0.01 0.01 1"/>
+        <material name="weight" shininess="0.03" specular="0.4" reflectance="100" rgba="0.01 0.01 0.01 1"/>
+        <material name="aluminum" shininess="0.03" specular="0.4" reflectance="50" rgba="0.8 0.8 0.8 1"/>
+        <material name="3dpart" shininess="0.0" specular="0.0" reflectance="0"/>
+    </asset>
+
+    <worldbody>
+
+        <light directional="true" ambient="0.2 0.2 0.2" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" castshadow="false" pos="0 3 3" dir="0 0 -1" name="light0" />
+
+        <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="Frame" />
+        <geom pos="-0.19617 -0.17875 0.49097" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.69 0.71 0.72 1" mesh="DAQBoard" />
+        <geom pos="-0.195367 -0.190591 0.542174" quat="0.707105 -2.59735e-06 0.707108 0" type="mesh" rgba="0.31 0.31 0.811 1" mesh="daq1" />
+        <geom pos="-0.151432 -0.190649 0.542734" quat="-2.59734e-06 0.707108 0 0.707105" type="mesh" rgba="0.9 0.95 0.95 1" mesh="daqlink" />
+        <geom pos="-0.19204 0.94821 0.51449" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" rgba="0.2 0.2 0.2 1" mesh="EPOS" />
+        <geom pos="-0.23592 1.9607 -0.66716" quat="0.707105 0.707108 0 0" type="mesh" rgba="1 1 1 1" mesh="Rail" />
+        <geom pos="-0.06483 1.06811 0.530737" quat="-3.30111e-06 -1.61093e-06 -0.898702 0.438561" type="mesh" rgba="0.2 0.2 0.2 1" mesh="motor" />
+        <body name="lm" pos="0.12872 -0.0393044 0.532833">
+            <inertial pos="-0.001196 -0.000121435 -0.00604192" quat="0.631422 0.62872 -0.320265 0.321632" mass="1" diaginertia="0.000918443 0.00087451 0.000368455" />
+            <joint name="cartJoint" pos="0 0 0" axis="0 1 0" type="slide" damping="150"/>
+            <geom type="mesh" rgba="0.25 0.25 0.25 1" mesh="lm" />
+            <geom pos="0 0 -0.012" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="cart" />
+            <geom pos="3.50674e-07 -0.028087 0.055381" quat="-2.59734e-06 0.707105 0.707108 -2.59735e-06" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="support1" />
+            <geom pos="3.50674e-07 -0.028087 0.055381" quat="-2.59734e-06 0.707105 0.707108 -2.59735e-06" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="support2" />
+            <geom pos="-0.0409999 -1.50601e-07 0.0300003" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.2 0.2 0.2 1" mesh="cartEncoder" />
+            <body name="ArmBody" pos="0.105 3.85687e-07 0.0299996" quat="-1.8366e-06 1 -3.37308e-12 -1.8366e-06">
+                <inertial pos="-0.0145 -4.35274e-08 -0.269165" mass="1" diaginertia="0.00645681 0.00645662 1.15631e-05" />
+                <joint name="armJoint" pos="0 0 0" axis="1 0 0" type="hinge" class="main"/>
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="ArmBody" />
+                <geom pos="-0.0145 0 -0.474" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" rgba="1 0.811765 0.501961 1" mesh="Mass" />
+            </body>
+        </body>
+    </worldbody>
+
+    <!-- Actuator -->
+    <actuator>
+
+        <!-- Cart force control -->
+        <!--motor name='force_control' ctrllimited="true" joint='cartAxis' ctrlrange='-50 50' gear="15"/-->
+
+        <!-- Arm position control -->
+        <position name="pos_control" ctrllimited="true" ctrlrange="-0.85 0.85" joint="cartJoint" kp="1000"/>
+
+    </actuator>
+
+</mujoco>

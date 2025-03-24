@@ -1,0 +1,80 @@
+absl-py==2.1.0
+argcomplete==3.5.0
+Brotli @ file:///croot/brotli-split_1736182456865/work
+certifi @ file:///croot/certifi_1738623731865/work/certifi
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+cloudpickle==3.1.1
+coloredlogs==15.0.1
+contourpy==1.3.1
+cycler==0.12.1
+etils==1.12.0
+exceptiongroup==1.2.2
+Farama-Notifications==0.0.4
+filelock @ file:///croot/filelock_1700591183607/work
+flake8-blind-except==0.2.1
+flake8-builtins==2.5.0
+flake8-class-newline==1.6.0
+flake8-comprehensions==3.15.0
+flake8-deprecated==2.2.1
+flake8-docstrings==1.7.0
+flake8-import-order==0.18.2
+flake8-quotes==3.4.0
+flatbuffers==25.2.10
+fonttools==4.56.0
+fsspec==2025.2.0
+glfw==2.8.0
+gmpy2 @ file:///croot/gmpy2_1738085463648/work
+gymnasium==1.0.0
+humanfriendly==10.0
+idna @ file:///croot/idna_1714398848350/work
+imageio==2.37.0
+importlib_resources==6.5.2
+iniconfig==2.0.0
+Jinja2 @ file:///croot/jinja2_1741710844255/work
+kiwisolver==1.4.8
+lark==1.2.2
+MarkupSafe @ file:///croot/markupsafe_1738584038848/work
+matplotlib==3.10.0
+mjcf2urdf==0.0.1
+mkl-service==2.4.0
+mkl_fft @ file:///io/mkl313/mkl_fft_1730824109137/work
+mkl_random @ file:///io/mkl313/mkl_random_1730823916628/work
+mpmath @ file:///croot/mpmath_1690848262763/work
+mujoco==3.2.7
+mujoco-python-viewer==0.1.4
+networkx @ file:///croot/networkx_1737039604450/work
+numpy==1.26.4
+onnxruntime==1.20.1
+opencv-python==4.11.0.86
+packaging==24.2
+pandas==2.2.3
+pillow @ file:///croot/pillow_1738010226202/work
+pluggy==1.5.0
+protobuf==5.29.3
+pybullet==3.2.6
+PyOpenGL==3.1.9
+pyparsing==3.2.1
+PyQt5==5.15.11
+PyQt5-Qt5==5.15.16
+PyQt5_sip==12.17.0
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==8.3.3
+pytest-repeat==0.9.3
+pytest-rerunfailures==14.0
+python-dateutil==2.9.0.post0
+pytz==2025.1
+PyYAML @ file:///croot/pyyaml_1728657952215/work
+requests @ file:///croot/requests_1730999120400/work
+scipy==1.15.2
+six==1.17.0
+sympy @ file:///croot/sympy_1738108488918/work
+tomli==2.0.1
+torch==2.2.2
+torchaudio==2.2.2
+torchvision==0.17.2
+tqdm==4.67.1
+triton==2.2.0
+typing_extensions @ file:///croot/typing_extensions_1734714854207/work
+tzdata==2025.2
+urllib3 @ file:///croot/urllib3_1737133630106/work
+zipp==3.21.0
